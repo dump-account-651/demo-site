@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sigma Gümrük</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    IMPORTANT:
+    world-map.png is 610 x 409.
+    The SVG now uses exactly the same coordinate system.
+  -->
+  <style>
+    .hero-map {
+      aspect-ratio: 610 / 409;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       LOADING SCREEN
+  ====================================================== -->
+
+  <div id="loader" class="loader">
+
+    <div class="loader-inner">
+
+      <div class="loader-logo">
+        SIGMA
+      </div>
+
+      <div class="loader-bar">
+        <div
+          class="loader-bar-fill"
+          id="loaderBarFill">
+        </div>
+      </div>
+
+      <div
+        class="loader-percent"
+        id="loaderPercent">
+        0%
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       LANGUAGE SELECTION
+  ====================================================== -->
+
+  <div
+    id="langScreen"
+    class="lang-screen hidden"
+  >
+
+    <div class="lang-inner">
+
+      <h1 class="lang-title">
+        Dil Seçin / Choose Language
+      </h1>
+
+      <div class="lang-buttons">
+
+        <button
+          class="lang-btn"
+          data-lang="tr"
+        >
+          <span class="lang-flag">
+            🇹🇷
+          </span>
+
+          <span class="lang-name">
+            Türkçe
+          </span>
+        </button>
+
+
+        <button
+          class="lang-btn"
+          data-lang="en"
+        >
+          <span class="lang-flag">
+            🇬🇧
+          </span>
+
+          <span class="lang-name">
+            English
+          </span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN SITE
+  ====================================================== -->
+
+  <div
+    id="site"
+    class="site hidden"
+  >
+
+
+    <!-- ===================================================
+         DYNAMIC ISLAND NAVBAR
+    ==================================================== -->
+
+    <header
+      id="navIsland"
+      class="nav-island"
+    >
+
+      <div class="nav-island-inner">
+
+
+        <!-- LOGO -->
+
+        <a
+          href="#"
+          class="nav-island-logo"
+        >
+
+          <img
+            src="logo.png"
+            alt="Sigma Gümrük Müşavirliği"
+          >
+
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+
+        <nav
+          class="nav-island-links"
+          aria-label="Primary"
+        >
+
+          <a
+            href="#"
+            data-i18n="nav_home"
+          ></a>
+
+          <a
+            href="#"
+            data-i18n="nav_services"
+          ></a>
+
+          <a
+            href="#"
+            data-i18n="nav_about"
+          ></a>
+
+          <a
+            href="#"
+            data-i18n="nav_contact"
+          ></a>
+
+        </nav>
+
+
+        <!-- ACTIONS -->
+
+        <div class="nav-island-actions">
+
+          <button
+            id="langToggle"
+            class="lang-toggle"
+          ></button>
+
+
+          <button
+            id="navMenuToggle"
+            class="nav-menu-toggle"
+            aria-label="Menüyü aç"
+            aria-expanded="false"
+          >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         MOBILE DROPDOWN
+    ==================================================== -->
+
+    <div
+      id="navDropdown"
+      class="nav-dropdown"
+    >
+
+      <a
+        href="#"
+        data-i18n="nav_home"
+      ></a>
+
+      <a
+        href="#"
+        data-i18n="nav_services"
+      ></a>
+
+      <a
+        href="#"
+        data-i18n="nav_about"
+      ></a>
+
+      <a
+        href="#"
+        data-i18n="nav_contact"
+      ></a>
+
+    </div>
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <main class="hero">
+
+
+      <!-- =================================================
+           WORLD MAP
+      ================================================== -->
+
+      <div
+        class="hero-map"
+        aria-hidden="true"
+      >
+
+        <img
+          src="world-map.png"
+          alt=""
+          class="hero-map-img"
+        >
+
+
+        <!--
+          IMPORTANT
+
+          world-map.png = 610 x 409
+
+          Therefore:
+          SVG viewBox = 0 0 610 409
+
+          This keeps every SVG coordinate aligned
+          with the actual map.
+        -->
+
+        <svg
+          class="hero-map-network"
+          viewBox="0 0 610 409"
+          preserveAspectRatio="xMidYMid meet"
+        >
+
+
+          <!-- =================================================
+               TRADE ROUTES
+          ================================================== -->
+
+
+          <!--
+            TURKEY → NORTH AMERICA
+
+            Turkey:
+            approximately 325,181
+
+            North America:
+            approximately 145,159
+          -->
+
+          <path
+            class="hero-arc"
+            style="animation-delay: 0s"
+            d="M325,181 Q235,115 145,159"
+          />
+
+
+          <!--
+            TURKEY → NORTHERN EUROPE
+          -->
+
+          <path
+            class="hero-arc"
+            style="animation-delay: 0.4s"
+            d="M325,181 Q300,135 275,120"
+          />
+
+
+          <!--
+            TURKEY → CENTRAL ASIA
+          -->
+
+          <path
+            class="hero-arc"
+            style="animation-delay: 0.8s"
+            d="M325,181 Q350,155 380,160"
+          />
+
+
+          <!--
+            TURKEY → EAST ASIA
+          -->
+
+          <path
+            class="hero-arc"
+            style="animation-delay: 1.2s"
+            d="M325,181 Q405,125 485,154"
+          />
+
+
+          <!--
+            TURKEY → SOUTHEAST ASIA
+          -->
+
+          <path
+            class="hero-arc"
+            style="animation-delay: 1.6s"
+            d="M325,181 Q405,165 455,215"
+          />
+
+
+
+          <!-- =================================================
+               PULSE RINGS
+          ================================================== -->
+
+
+          <!--
+            MAIN TURKEY HUB
+
+            This is now positioned directly
+            on Turkey.
+          -->
+
+          <!-- MAIN TURKEY HUB -->
+
+<circle
+  class="hero-pulse"
+  cx="325"
+  cy="187"
+  r="4"
+  style="animation-delay: 0s"
+/>
+
+<circle
+  class="hero-dot hero-dot--hub"
+  cx="325"
+  cy="187"
+  r="6"
+/>
+
+
+          <!-- North America -->
+
+          <circle
+            class="hero-pulse"
+            cx="145"
+            cy="159"
+            r="4"
+            style="animation-delay: 0.3s"
+          />
+
+
+          <!-- Northern Europe -->
+
+          <circle
+            class="hero-pulse"
+            cx="275"
+            cy="120"
+            r="4"
+            style="animation-delay: 0.6s"
+          />
+
+
+          <!-- Central Asia -->
+
+          <circle
+            class="hero-pulse"
+            cx="380"
+            cy="160"
+            r="4"
+            style="animation-delay: 0.9s"
+          />
+
+
+          <!-- East Asia -->
+
+          <circle
+            class="hero-pulse"
+            cx="485"
+            cy="154"
+            r="4"
+            style="animation-delay: 1.2s"
+          />
+
+
+          <!-- Southeast Asia -->
+
+          <circle
+            class="hero-pulse"
+            cx="455"
+            cy="215"
+            r="4"
+            style="animation-delay: 1.5s"
+          />
+
+
+
+          <!-- =================================================
+               LOCATION DOTS
+          ================================================== -->
+
+
+          <!--
+            MAIN TURKEY HUB
+
+            WHITE DOT = MAIN HUB
+          -->
+
+          
+
+
+          <!-- North America -->
+
+          <circle
+            class="hero-dot"
+            cx="145"
+            cy="159"
+            r="4"
+          />
+
+
+          <!-- Northern Europe -->
+
+          <circle
+            class="hero-dot"
+            cx="275"
+            cy="120"
+            r="4"
+          />
+
+
+          <!-- Central Asia -->
+
+          <circle
+            class="hero-dot"
+            cx="380"
+            cy="160"
+            r="4"
+          />
+
+
+          <!-- East Asia -->
+
+          <circle
+            class="hero-dot"
+            cx="485"
+            cy="154"
+            r="4"
+          />
+
+
+          <!-- Southeast Asia -->
+
+          <circle
+            class="hero-dot"
+            cx="455"
+            cy="215"
+            r="4"
+          />
+
+        </svg>
+
+      </div>
+
+
+
+      <!-- =================================================
+           HERO CONTENT
+      ================================================== -->
+
+      <div class="hero-content">
+
+        <p
+          class="hero-eyebrow"
+          data-i18n="hero_eyebrow"
+        ></p>
+
+
+        <h1
+          data-i18n="hero_title"
+        ></h1>
+
+
+        <p
+          data-i18n="hero_subtitle"
+        ></p>
+
+
+        <button
+          class="cta"
+          data-i18n="hero_cta"
+        ></button>
+
+      </div>
+
+
+      <!-- MAP CAPTION -->
+
+      <p
+        class="hero-caption"
+        data-i18n="hero_caption"
+      ></p>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+      <p
+        data-i18n="footer_text"
+      ></p>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
