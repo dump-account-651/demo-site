@@ -20,6 +20,37 @@ const translations = {
 
     hero_caption: "Ayrıntılı Şube ve Temsilcilik Haritası",
 
+    services_eyebrow: "HİZMETLERİMİZ",
+
+    services_title: "Gümrük ve Dış Ticarette Sunduğumuz Hizmetler",
+
+    services_subtitle:
+      "İthalat ve ihracat süreçlerinizin her aşamasında yanınızdayız.",
+
+    service_1_title: "Gümrük Müşavirliği",
+    service_1_desc:
+      "Beyanname hazırlama, tarife sınıflandırma ve mevzuat uyumluluğu konularında uzman danışmanlık.",
+
+    service_2_title: "İthalat İşlemleri",
+    service_2_desc:
+      "Gümrük beyannamesinden teslimata kadar ithalat sürecinizi uçtan uca yönetiyoruz.",
+
+    service_3_title: "İhracat İşlemleri",
+    service_3_desc:
+      "İhracat belgelerinizi hazırlar, gümrük süreçlerinizi hızlandırırız.",
+
+    service_4_title: "Antrepo Hizmetleri",
+    service_4_desc:
+      "Güvenli depolama ve envanter yönetimi için lisanslı antrepo çözümleri.",
+
+    service_5_title: "Dış Ticaret Danışmanlığı",
+    service_5_desc:
+      "Pazar araştırmasından teşvik mevzuatına, dış ticaret stratejinizi birlikte kurgularız.",
+
+    service_6_title: "Lojistik Danışmanlık",
+    service_6_desc:
+      "Taşımacılık planlamasından rota optimizasyonuna kadar lojistik süreç danışmanlığı.",
+
     footer_text:
       "© 2026 Sigma Gümrük. Tüm hakları saklıdır.",
 
@@ -43,6 +74,37 @@ const translations = {
     hero_cta: "Get a Quote",
 
     hero_caption: "Detailed Branch & Representative Map",
+
+    services_eyebrow: "OUR SERVICES",
+
+    services_title: "Our Customs & Foreign Trade Services",
+
+    services_subtitle:
+      "We're with you at every stage of your import and export processes.",
+
+    service_1_title: "Customs Consultancy",
+    service_1_desc:
+      "Expert guidance on declaration preparation, tariff classification, and regulatory compliance.",
+
+    service_2_title: "Import Operations",
+    service_2_desc:
+      "We manage your import process end-to-end, from customs declaration to delivery.",
+
+    service_3_title: "Export Operations",
+    service_3_desc:
+      "We prepare your export documentation and accelerate your customs procedures.",
+
+    service_4_title: "Bonded Warehousing",
+    service_4_desc:
+      "Licensed bonded warehouse solutions for secure storage and inventory management.",
+
+    service_5_title: "Foreign Trade Consulting",
+    service_5_desc:
+      "From market research to incentive regulations, we help shape your foreign trade strategy.",
+
+    service_6_title: "Logistics Consulting",
+    service_6_desc:
+      "Logistics process consulting, from transportation planning to route optimization.",
 
     footer_text:
       "© 2026 Sigma Gümrük. All rights reserved.",
@@ -345,7 +407,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "resize",
     () => {
 
-      if (window.innerWidth > 720) {
+      if (window.innerWidth > 1024) {
         closeMobileMenu();
       }
 
