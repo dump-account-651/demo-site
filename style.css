@@ -1878,37 +1878,26 @@ a {
 }
 
 /* =========================================================
-   iPAD / TABLET LANDSCAPE FIX
+   iPAD LANDSCAPE — SERVICES OVERLAP FIX
    ========================================================= */
 
-@media (min-width: 768px) and (max-width: 1100px) and (orientation: landscape) {
+@media (orientation: landscape) and
+       (min-width: 768px) and
+       (max-height: 1100px) {
 
-  /* Hero'nun tamamını ekran yüksekliği kadar tut */
-  .hero {
-    min-height: 100dvh;
-    padding-top: 6rem;
-    padding-bottom: 5rem;
-  }
-
-  /* Hizmetler bölümünü Hero'nun içine sokma */
   .services {
-    margin-top: 0 !important;
+    margin: 0 auto !important;
     padding-top: 5rem;
     position: relative;
     z-index: 5;
   }
 
-  /* Hero içeriğinin fazla aşağı taşmasını engelle */
+  .hero {
+    min-height: 100dvh;
+    padding-bottom: 5rem;
+  }
+
   .hero-content {
-    transform: translateY(0);
+    transform: none !important;
   }
-
-}
-
-@media (min-width: 768px) and (max-width: 1100px) and (orientation: landscape) {
-
-  .services {
-    margin-top: 80px !important;
-  }
-
 }
