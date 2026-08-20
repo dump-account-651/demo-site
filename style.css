@@ -1878,14 +1878,29 @@ a {
 }
 
 /* =========================================================
-   TABLET / iPAD LANDSCAPE
+   iPAD / TABLET LANDSCAPE FIX
    ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1100px) and (orientation: landscape) {
 
+  /* Hero'nun tamamını ekran yüksekliği kadar tut */
+  .hero {
+    min-height: 100dvh;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Hizmetler bölümünü Hero'nun içine sokma */
   .services {
-    margin-top: 0;
-    padding-top: 4rem;
+    margin-top: 0 !important;
+    padding-top: 5rem;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Hero içeriğinin fazla aşağı taşmasını engelle */
+  .hero-content {
+    transform: translateY(0);
   }
 
 }
