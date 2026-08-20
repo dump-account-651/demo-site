@@ -18,7 +18,7 @@ const translations = {
 
     hero_cta: "Teklif Alın",
 
-    hero_caption: "Ayrıntılı Şube ve Temsilcilik Haritası",
+    hero_caption: "",
 
     services_eyebrow: "HİZMETLERİMİZ",
 
@@ -113,7 +113,7 @@ const translations = {
 
     hero_cta: "Get a Quote",
 
-    hero_caption: "Detailed Branch & Representative Map",
+    hero_caption: "",
 
     services_eyebrow: "OUR SERVICES",
 
