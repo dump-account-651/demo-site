@@ -404,7 +404,7 @@ a {
 
   width: auto;
 
-  height: 34px;
+  height: 42px;
 }
 
 
@@ -484,6 +484,8 @@ a {
 
 .lang-toggle {
   min-width: 42px;
+
+  margin-right: 0.5rem;
 
   padding: 0.35rem 0.8rem;
 
@@ -1013,6 +1015,150 @@ a {
 
 
 /* =========================================================
+   SECTION HEADER
+   (reusable pattern for services / future homepage sections)
+   ========================================================= */
+
+.section-header {
+  max-width: 640px;
+
+  margin: 0 auto 3rem;
+
+  text-align: center;
+}
+
+.section-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-dim);
+
+  margin: 0 0 0.75rem;
+}
+
+.section-header h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+
+  margin: 0 0 0.75rem;
+}
+
+.section-subtitle {
+  color: var(--text-dim);
+
+  line-height: 1.6;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services {
+  max-width: 1200px;
+
+  margin: -400px auto 0;
+
+  padding: 2.5rem 1.5rem 6rem;
+
+  scroll-margin-top: 100px;
+}
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: var(--bg-soft);
+
+  border: 1px solid #21262d;
+
+  border-radius: 16px;
+
+  padding: 2rem 1.75rem;
+
+  text-align: left;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--nav-outline);
+
+  background: #1c2430;
+}
+
+.service-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 1.25rem;
+
+  border-radius: 12px;
+
+  background: rgba(79, 156, 249, 0.12);
+
+  color: var(--accent);
+}
+
+.service-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  margin: 0 0 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.92rem;
+
+  line-height: 1.6;
+
+  color: var(--text-dim);
+
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    padding: 4rem 1.25rem 5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
@@ -1035,7 +1181,7 @@ a {
    MOBILE
    ========================================================= */
 
-@media (max-width: 720px) {
+@media (max-width: 1024px) {
 
   /* -------------------------------------------------------
      NAVBAR
@@ -1078,9 +1224,9 @@ a {
   }
 
   .nav-island-logo img {
-    height: 24px;
+    height: 32px;
 
-    max-width: 145px;
+    max-width: 190px;
   }
 
   .nav-island-links {
@@ -1382,9 +1528,9 @@ a {
   }
 
   .nav-island-logo img {
-    height: 22px;
+    height: 28px;
 
-    max-width: 125px;
+    max-width: 160px;
   }
 
   .lang-toggle {
