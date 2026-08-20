@@ -58,10 +58,10 @@ const translations = {
     about_text:
       "Sigma Gümrük Müşavirliği olarak, yılların deneyimini modern gümrük çözümleriyle birleştiriyoruz. Uzman kadromuz, ithalat ve ihracat süreçlerinizin her aşamasında mevzuata tam uyumlu, hızlı ve şeffaf hizmet sunar. Amacımız, dış ticaretinizi büyütürken gümrük işlemlerinin karmaşıklığını sizin için ortadan kaldırmaktır.",
 
-    about_highlight_1: "Lisanslı Gümrük Müşavirliği",
-    about_highlight_2: "Mevzuata Tam Uyum",
-    about_highlight_3: "7/24 Operasyonel Destek",
-    about_highlight_4: "Global Lojistik Ağı",
+    
+    about_highlight_1: "Mevzuata Tam Uyum",
+    about_highlight_2: "7/24 Operasyonel Destek",
+    about_highlight_3: "Global Lojistik Ağı",
 
     contact_eyebrow: "İLETİŞİM",
 
@@ -153,10 +153,9 @@ const translations = {
     about_text:
       "At Sigma Gümrük, we combine years of experience with modern customs solutions. Our expert team delivers fast, transparent, and fully compliant service at every stage of your import and export processes. Our goal is to remove the complexity of customs procedures so you can focus on growing your trade.",
 
-    about_highlight_1: "Licensed Customs Consultancy",
-    about_highlight_2: "Full Regulatory Compliance",
-    about_highlight_3: "24/7 Operational Support",
-    about_highlight_4: "Global Logistics Network",
+    about_highlight_1: "Full Regulatory Compliance",
+    about_highlight_2: "24/7 Operational Support",
+    about_highlight_3: "Global Logistics Network",
 
     contact_eyebrow: "CONTACT",
 
