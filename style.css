@@ -1876,3 +1876,16 @@ a {
     transition: none !important;
   }
 }
+
+/* =========================================================
+   TABLET / iPAD LANDSCAPE
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: landscape) {
+
+  .services {
+    margin-top: 0;
+    padding-top: 4rem;
+  }
+
+}
