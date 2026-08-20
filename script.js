@@ -51,6 +51,46 @@ const translations = {
     service_6_desc:
       "Taşımacılık planlamasından rota optimizasyonuna kadar lojistik süreç danışmanlığı.",
 
+    about_eyebrow: "HAKKIMIZDA",
+
+    about_title: "Yılların Verdiği Deneyimle Yanınızdayız",
+
+    about_text:
+      "Sigma Gümrük Müşavirliği olarak, yılların deneyimini modern gümrük çözümleriyle birleştiriyoruz. Uzman kadromuz, ithalat ve ihracat süreçlerinizin her aşamasında mevzuata tam uyumlu, hızlı ve şeffaf hizmet sunar. Amacımız, dış ticaretinizi büyütürken gümrük işlemlerinin karmaşıklığını sizin için ortadan kaldırmaktır.",
+
+    about_highlight_1: "Lisanslı Gümrük Müşavirliği",
+    about_highlight_2: "Mevzuata Tam Uyum",
+    about_highlight_3: "7/24 Operasyonel Destek",
+    about_highlight_4: "Global Lojistik Ağı",
+
+    contact_eyebrow: "İLETİŞİM",
+
+    contact_title: "Bizimle İletişime Geçin",
+
+    contact_subtitle:
+      "Sorularınız için bize ulaşın, size en kısa sürede dönüş yapalım.",
+
+    contact_address_label: "Adres",
+    contact_address_value:
+      "Merkez Mahallesi, Gümrük Caddesi No:1, İstanbul, Türkiye",
+
+    contact_phone_label: "Telefon",
+    contact_phone_value: "+90 (212) 000 00 00",
+
+    contact_email_label: "E-posta",
+    contact_email_value: "info@sigmagumruk.com",
+
+    contact_hours_label: "Çalışma Saatleri",
+    contact_hours_value: "Pazartesi - Cuma, 09:00 - 18:00",
+
+    contact_form_name: "Ad Soyad",
+    contact_form_email: "E-posta",
+    contact_form_message: "Mesajınız",
+    contact_form_submit: "Gönder",
+
+    contact_form_success:
+      "Mesajınız için teşekkürler! En kısa sürede size dönüş yapacağız.",
+
     footer_text:
       "© 2026 Sigma Gümrük. Tüm hakları saklıdır.",
 
@@ -106,6 +146,46 @@ const translations = {
     service_6_desc:
       "Logistics process consulting, from transportation planning to route optimization.",
 
+    about_eyebrow: "ABOUT US",
+
+    about_title: "By Your Side With Years of Experience",
+
+    about_text:
+      "At Sigma Gümrük, we combine years of experience with modern customs solutions. Our expert team delivers fast, transparent, and fully compliant service at every stage of your import and export processes. Our goal is to remove the complexity of customs procedures so you can focus on growing your trade.",
+
+    about_highlight_1: "Licensed Customs Consultancy",
+    about_highlight_2: "Full Regulatory Compliance",
+    about_highlight_3: "24/7 Operational Support",
+    about_highlight_4: "Global Logistics Network",
+
+    contact_eyebrow: "CONTACT",
+
+    contact_title: "Get in Touch",
+
+    contact_subtitle:
+      "Reach out with your questions — we'll get back to you as soon as possible.",
+
+    contact_address_label: "Address",
+    contact_address_value:
+      "Merkez Mahallesi, Gümrük Caddesi No:1, Istanbul, Turkey",
+
+    contact_phone_label: "Phone",
+    contact_phone_value: "+90 (212) 000 00 00",
+
+    contact_email_label: "Email",
+    contact_email_value: "info@sigmagumruk.com",
+
+    contact_hours_label: "Working Hours",
+    contact_hours_value: "Monday - Friday, 9:00 AM - 6:00 PM",
+
+    contact_form_name: "Full Name",
+    contact_form_email: "Email",
+    contact_form_message: "Message",
+    contact_form_submit: "Send",
+
+    contact_form_success:
+      "Thank you for your message! We'll get back to you shortly.",
+
     footer_text:
       "© 2026 Sigma Gümrük. All rights reserved.",
 
@@ -152,6 +232,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navDropdown =
     document.getElementById("navDropdown");
+
+  const contactForm =
+    document.getElementById("contactForm");
+
+  const contactFormNote =
+    document.getElementById("contactFormNote");
 
 
   // =======================================================
@@ -439,6 +525,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navIsland.classList.remove(
       "menu-open"
+    );
+  }
+
+
+  // =======================================================
+  // CONTACT FORM
+  //
+  // NOTE: This only validates and shows a confirmation
+  // client-side — it does not actually send an email yet.
+  // Wire this up to a backend or a service like Formspree
+  // / EmailJS so submissions are actually delivered.
+  // =======================================================
+
+  if (contactForm) {
+
+    contactForm.addEventListener(
+      "submit",
+      (event) => {
+
+        event.preventDefault();
+
+        contactFormNote.classList.remove(
+          "hidden"
+        );
+
+        contactForm.reset();
+      }
     );
   }
 
