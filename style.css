@@ -404,7 +404,7 @@ a {
 
   width: auto;
 
-  height: 42px;
+  height: 50px;
 }
 
 
@@ -1159,6 +1159,284 @@ a {
 
 
 /* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 5rem 1.5rem 6rem;
+
+  scroll-margin-top: 100px;
+}
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 3rem;
+
+  align-items: start;
+
+  text-align: left;
+}
+
+.about-text {
+  font-size: 1.02rem;
+
+  line-height: 1.8;
+
+  color: var(--text-dim);
+
+  margin: 0;
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.about-highlights li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.85rem;
+
+  padding: 0.9rem 1.1rem;
+
+  background: var(--bg-soft);
+
+  border: 1px solid #21262d;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-highlights li:hover {
+  border-color: var(--nav-outline);
+
+  transform: translateX(4px);
+}
+
+.about-highlights svg {
+  flex-shrink: 0;
+
+  width: 20px;
+  height: 20px;
+
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .about-highlights li {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 5rem 1.5rem 6rem;
+
+  scroll-margin-top: 100px;
+}
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 3rem;
+
+  align-items: start;
+
+  text-align: left;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: flex-start;
+}
+
+.contact-info-item svg {
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  margin-top: 0.15rem;
+
+  color: var(--accent);
+}
+
+.contact-info-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--text-dim);
+
+  margin: 0 0 0.25rem;
+}
+
+.contact-info-value {
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.1rem;
+
+  padding: 2rem;
+
+  background: var(--bg-soft);
+
+  border: 1px solid #21262d;
+
+  border-radius: 16px;
+}
+
+.contact-form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1.1rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.4rem;
+}
+
+.contact-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  color: var(--text-dim);
+}
+
+.contact-field input,
+.contact-field textarea {
+  padding: 0.7rem 0.9rem;
+
+  background: var(--bg);
+
+  border: 1px solid #30363d;
+
+  border-radius: 10px;
+
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  resize: vertical;
+
+  transition: border-color 0.2s ease;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+
+  border-color: var(--accent);
+}
+
+.contact-submit {
+  align-self: flex-start;
+}
+
+.contact-form-note {
+  font-size: 0.9rem;
+
+  color: var(--accent);
+
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .contact-info-item {
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact {
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
@@ -1224,7 +1502,7 @@ a {
   }
 
   .nav-island-logo img {
-    height: 32px;
+    height: 52px;
 
     max-width: 190px;
   }
@@ -1528,9 +1806,9 @@ a {
   }
 
   .nav-island-logo img {
-    height: 28px;
+    height: 40px;
 
-    max-width: 160px;
+    max-width: 200px;
   }
 
   .lang-toggle {
