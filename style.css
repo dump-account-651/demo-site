@@ -1904,3 +1904,11 @@ a {
   }
 
 }
+
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: landscape) {
+
+  .services {
+    margin-top: 80px !important;
+  }
+
+}
