@@ -1119,7 +1119,7 @@ a {
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  transform: translateY(-30px);
+  transform: translateY(-150px) !important;
 }
 
 .services-logo img {
