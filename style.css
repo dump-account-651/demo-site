@@ -558,7 +558,8 @@ a {
 
   transition:
     transform 0.3s ease,
-    opacity 0.3s ease;
+    opacity 0.3s ease,
+    background 0.2s ease;
 }
 
 .nav-menu-toggle.active span:nth-child(1) {
@@ -1433,6 +1434,149 @@ a {
   .contact-form {
     padding: 1.5rem;
   }
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+
+   Elements start hidden/offset, then animate in the first
+   time they enter the viewport (see script.js). Each item
+   in a repeated group gets a staggered delay so the group
+   cascades in rather than popping in all at once.
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.in-view {
+  opacity: 1;
+
+  transform: none;
+}
+
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.08s; }
+.service-card:nth-child(3) { transition-delay: 0.16s; }
+.service-card:nth-child(4) { transition-delay: 0.24s; }
+.service-card:nth-child(5) { transition-delay: 0.32s; }
+.service-card:nth-child(6) { transition-delay: 0.4s; }
+
+.about-highlights li:nth-child(1) { transition-delay: 0s; }
+.about-highlights li:nth-child(2) { transition-delay: 0.1s; }
+.about-highlights li:nth-child(3) { transition-delay: 0.2s; }
+.about-highlights li:nth-child(4) { transition-delay: 0.3s; }
+
+.contact-info-item:nth-child(1) { transition-delay: 0s; }
+.contact-info-item:nth-child(2) { transition-delay: 0.1s; }
+.contact-info-item:nth-child(3) { transition-delay: 0.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    transition: none !important;
+  }
+}
+
+
+/* =========================================================
+   HOVER / INTERACTION POLISH
+   ========================================================= */
+
+/* Service card: icon lifts and brightens along with the card */
+
+.service-icon {
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+.service-card:hover .service-icon {
+  transform:
+    scale(1.1)
+    rotate(-4deg);
+
+  background: rgba(79, 156, 249, 0.22);
+}
+
+/* About highlights: icon nudges forward on hover */
+
+.about-highlights svg {
+  transition: transform 0.25s ease;
+}
+
+.about-highlights li:hover svg {
+  transform: scale(1.15);
+}
+
+/* Contact info rows: subtle life on hover even though they're
+   not clickable, so the page feels responsive throughout */
+
+.contact-info-item {
+  padding: 0.4rem;
+  margin: -0.4rem;
+
+  border-radius: 10px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-info-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+
+  transform: translateX(4px);
+}
+
+.contact-info-item svg {
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.contact-info-item:hover svg {
+  transform: scale(1.12);
+}
+
+/* Language toggle: tactile press feedback to match the CTA button */
+
+.lang-toggle {
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.lang-toggle:active {
+  transform: scale(0.94);
+}
+
+/* Language picker buttons: press feedback */
+
+.lang-btn:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
+/* Hamburger: brighten on hover for a clearer affordance */
+
+.nav-menu-toggle:hover span {
+  background: var(--accent);
 }
 
 
