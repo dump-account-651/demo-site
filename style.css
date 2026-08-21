@@ -1597,7 +1597,9 @@ a {
 }
 
   .hero-content {
-  transform: translateY(4rem) !important;
+  position: relative;
+  z-index: 2;
+  transform: translateY(5rem) !important;
 }
 
 
@@ -1898,5 +1900,15 @@ a {
 
   .hero-content {
     transform: none !important;
+  }
+}
+
+/* =========================================================
+   MOVE HERO TEXT DOWN
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hero-content {
+    transform: translateY(5rem) !important;
   }
 }
