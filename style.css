@@ -1087,6 +1087,33 @@ a {
   scroll-margin-top: 100px;
 }
 
+.services-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 1.5rem;
+}
+
+.services-logo img {
+  width: auto;
+  height: 70px;
+
+  opacity: 0.95;
+
+  filter:
+    drop-shadow(0 0 12px rgba(79, 156, 249, 0.12));
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.services-logo img:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
 .services-grid {
   display: grid;
 
