@@ -24,8 +24,21 @@
   --border: rgba(255, 255, 255, 0.08);
 }
 
+/* =========================================================
+   HIDE VISIBLE SCROLLBAR
+   ========================================================= */
+
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+body {
+  -ms-overflow-style: none; /* Internet Explorer / old Edge */
 }
 
 body {
