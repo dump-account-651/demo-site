@@ -1597,7 +1597,7 @@ a {
 }
 
   .hero-content {
-  transform: translateY(4rem);
+  transform: translateY(4rem) !important;
 }
 
 
