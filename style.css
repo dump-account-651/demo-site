@@ -1333,27 +1333,13 @@ a {
   margin: 0;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-
-  gap: 1.1rem;
-
-  padding: 2rem;
-
-  background: var(--bg-soft);
-
-  border: 1px solid #21262d;
-
-  border-radius: 16px;
+.contact-info-value span {
+  display: block;
+  margin-bottom: 0.35rem;
 }
 
-.contact-form-row {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 1.1rem;
+.contact-info-value span:last-child {
+  margin-bottom: 0;
 }
 
 .contact-field {
