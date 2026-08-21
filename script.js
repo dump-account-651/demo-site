@@ -11,7 +11,8 @@ const translations = {
 
     hero_eyebrow: "SIGMA GÜMRÜK",
 
-    hero_title: "Gümrük İşlemlerinizde Güvenilir Çözüm Ortağınız",
+    hero_title:
+      "Gümrük İşlemlerinizde Güvenilir Çözüm Ortağınız",
 
     hero_subtitle:
       "İthalat ve ihracat süreçlerinizi hızlı, şeffaf ve sorunsuz şekilde yönetiyoruz.",
@@ -22,7 +23,8 @@ const translations = {
 
     services_eyebrow: "HİZMETLERİMİZ",
 
-    services_title: "Gümrük ve Dış Ticarette Sunduğumuz Hizmetler",
+    services_title:
+      "Gümrük ve Dış Ticarette Sunduğumuz Hizmetler",
 
     services_subtitle:
       "İthalat ve ihracat süreçlerinizin her aşamasında yanınızdayız.",
@@ -49,7 +51,8 @@ const translations = {
 
     about_eyebrow: "HAKKIMIZDA",
 
-    about_title: "Yılların Verdiği Deneyimle Yanınızdayız",
+    about_title:
+      "Yılların Verdiği Deneyimle Yanınızdayız",
 
     about_text:
       "2005 yılında gümrük sektöründe başlayan yolculuğumuz, yıllar içerisinde edindiğimiz bilgi, deneyim ve güçlü iş ortaklıklarıyla devam etmektedir. Gümrük müşavirliği ve dış ticaret süreçlerinde müşterilerimize hızlı, güvenilir ve çözüm odaklı hizmet sunmayı hedefliyoruz.",
@@ -60,26 +63,34 @@ const translations = {
 
     contact_eyebrow: "İLETİŞİM",
 
-    contact_title: "Bizimle İletişime Geçin",
+    contact_title:
+      "Bizimle İletişime Geçin",
 
     contact_subtitle:
       "Sorularınız için bize ulaşın, size en kısa sürede dönüş yapalım.",
 
     contact_address_label: "Adres",
+
     contact_address_value:
       "Alsancak Mahallesi 1472 Sokak Osmanbey Apartmanı No:44 K:2 D:4 Konak, İzmir",
 
     contact_phone_label: "Telefon",
-    contact_phone_value: "Emrah GÜLTEKİN: +90 (535) 215 68 40, Muhammet YANAR: +90 (538) 095 80 31, Eren ALKAN: +90 (532) 402 29 36",
+
+    // | karakteri telefonlar arasında ayraç olarak kullanılıyor
+    contact_phone_value:
+      "Emrah GÜLTEKİN: +90 (535) 215 68 40|Muhammet YANAR: +90 (538) 095 80 31|Eren ALKAN: +90 (532) 402 29 36",
 
     contact_email_label: "E-posta",
-    contact_email_value: "info@sigmagumruk.com",
+
+    contact_email_value:
+      "info@sigmagumruk.com",
 
     footer_text:
       "© 2026 Sigma Gümrük. Tüm hakları saklıdır.",
 
     lang_toggle: "EN"
   },
+
 
   en: {
     nav_home: "Home",
@@ -101,58 +112,76 @@ const translations = {
 
     services_eyebrow: "OUR SERVICES",
 
-    services_title: "Our Customs & Foreign Trade Services",
+    services_title:
+      "Our Customs & Foreign Trade Services",
 
     services_subtitle:
       "We're with you at every stage of your import and export processes.",
 
     service_1_title: "Customs Consultancy",
+
     service_1_desc:
       "Expert guidance on declaration preparation, tariff classification, and regulatory compliance.",
 
     service_2_title: "Import Operations",
+
     service_2_desc:
       "We manage your import process end-to-end, from customs declaration to delivery.",
 
     service_3_title: "Export Operations",
+
     service_3_desc:
       "We prepare your export documentation and accelerate your customs procedures.",
 
     service_4_title: "Bonded Warehousing",
+
     service_4_desc:
       "Licensed bonded warehouse solutions for secure storage and inventory management.",
 
     service_6_title: "Logistics Consulting",
+
     service_6_desc:
       "Logistics process consulting, from transportation planning to route optimization.",
 
     about_eyebrow: "ABOUT US",
 
-    about_title: "By Your Side With Years of Experience",
+    about_title:
+      "By Your Side With Years of Experience",
 
     about_text:
       "Our journey began in the customs sector in 2005 and has continued over the years with the knowledge, experience, and strong partnerships we have gained. We aim to provide our clients with fast, reliable, and solution-oriented services in customs consultancy and foreign trade processes.",
 
-    about_highlight_2: "Full Regulatory Compliance",
-    about_highlight_3: "24/7 Operational Support",
-    about_highlight_4: "Global Logistics Network",
+    about_highlight_2:
+      "Full Regulatory Compliance",
+
+    about_highlight_3:
+      "24/7 Operational Support",
+
+    about_highlight_4:
+      "Global Logistics Network",
 
     contact_eyebrow: "CONTACT",
 
-    contact_title: "Get in Touch",
+    contact_title:
+      "Get in Touch",
 
     contact_subtitle:
       "Reach out with your questions — we'll get back to you as soon as possible.",
 
     contact_address_label: "Address",
+
     contact_address_value:
       "Alsancak Mahallesi 1472 Sokak Osmanbey Apartmanı No:44 K:2 D:4 Konak, İzmir",
 
     contact_phone_label: "Phone",
-    contact_phone_value: "Emrah GÜLTEKİN: +90 (535) 215 68 40, Muhammet YANAR: +90 (538) 095 80 31, Eren ALKAN: +90 (532) 402 29 36",
+
+    contact_phone_value:
+      "Emrah GÜLTEKİN: +90 (535) 215 68 40|Muhammet YANAR: +90 (538) 095 80 31|Eren ALKAN: +90 (532) 402 29 36",
 
     contact_email_label: "Email",
-    contact_email_value: "info@sigmagumruk.com",
+
+    contact_email_value:
+      "info@sigmagumruk.com",
 
     footer_text:
       "© 2026 Sigma Gümrük. All rights reserved.",
@@ -166,6 +195,7 @@ const STORAGE_KEY = "sigmaLang";
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
 
   // =======================================================
   // ELEMENTS
@@ -200,7 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navDropdown =
     document.getElementById("navDropdown");
-
 
 
   // =======================================================
@@ -239,9 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loader.classList.add("hidden");
 
-      // Check whether the user has already
-      // selected a language.
-
       const savedLang =
         localStorage.getItem(STORAGE_KEY);
 
@@ -257,6 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
 
         langScreen.classList.remove("hidden");
+
       }
 
     }, 500);
@@ -284,6 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
       langScreen.classList.add("hidden");
 
       revealSite();
+
     });
 
   });
@@ -306,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
       STORAGE_KEY,
       current
     );
+
   });
 
 
@@ -329,14 +358,43 @@ document.addEventListener("DOMContentLoaded", () => {
           el.dataset.i18n;
 
         if (dict[key]) {
-          el.textContent =
-            dict[key];
+
+          // =================================================
+          // PHONE NUMBERS
+          // =================================================
+          // Each phone number is separated by "|"
+          // and displayed on its own line.
+
+          if (key === "contact_phone_value") {
+
+            el.innerHTML = dict[key]
+              .split("|")
+              .map(
+                (phone) =>
+                  `<span>${phone}</span>`
+              )
+              .join("");
+
+          }
+
+          // =================================================
+          // NORMAL TRANSLATIONS
+          // =================================================
+
+          else {
+
+            el.textContent =
+              dict[key];
+
+          }
+
         }
 
       });
 
     langToggle.textContent =
       dict.lang_toggle;
+
   }
 
 
@@ -359,16 +417,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 400);
 
     });
+
   }
 
 
   // =======================================================
   // SCROLL REVEAL
-  //
-  // Elements with class="reveal" (section headers, service
-  // cards, about highlights, contact rows) animate in the
-  // first time they scroll into view. Each is unobserved
-  // right after, so it never re-triggers on scroll-back.
   // =======================================================
 
   const revealEls =
@@ -379,40 +433,50 @@ document.addEventListener("DOMContentLoaded", () => {
     "IntersectionObserver" in window
   ) {
 
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
+    const revealObserver =
+      new IntersectionObserver(
+        (entries, observer) => {
 
-        entries.forEach((entry) => {
+          entries.forEach((entry) => {
 
-          if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-            entry.target.classList.add(
-              "in-view"
-            );
+              entry.target.classList.add(
+                "in-view"
+              );
 
-            observer.unobserve(entry.target);
-          }
+              observer.unobserve(
+                entry.target
+              );
 
-        });
+            }
 
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -40px 0px"
-      }
-    );
+          });
+
+        },
+        {
+          threshold: 0.15,
+          rootMargin:
+            "0px 0px -40px 0px"
+        }
+      );
 
     revealEls.forEach((el) => {
+
       revealObserver.observe(el);
+
     });
 
-  } else {
+  }
 
-    // No IntersectionObserver support — just show everything.
+  else {
 
     revealEls.forEach((el) => {
+
       el.classList.add("in-view");
+
     });
+
   }
 
 
@@ -423,10 +487,6 @@ document.addEventListener("DOMContentLoaded", () => {
   navMenuToggle.addEventListener(
     "click",
     (event) => {
-
-      // Prevent the document-level
-      // outside-click handler from
-      // immediately closing the menu.
 
       event.stopPropagation();
 
@@ -444,10 +504,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "aria-expanded",
         String(isOpen)
       );
-
-      // This class is used by CSS to
-      // flatten the bottom corners of
-      // the island while the menu is open.
 
       navIsland.classList.toggle(
         "menu-open",
@@ -469,7 +525,9 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener(
         "click",
         () => {
+
           closeMobileMenu();
+
         }
       );
 
@@ -496,6 +554,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
 
         closeMobileMenu();
+
       }
 
     }
@@ -511,7 +570,9 @@ document.addEventListener("DOMContentLoaded", () => {
     () => {
 
       if (window.innerWidth > 1024) {
+
         closeMobileMenu();
+
       }
 
     }
@@ -537,11 +598,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "false"
     );
 
-    // Restore the island's rounded
-    // bottom corners.
-
     navIsland.classList.remove(
       "menu-open"
     );
+
   }
+
 });
