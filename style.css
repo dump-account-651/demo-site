@@ -1019,7 +1019,6 @@ a {
 
 .about-highlights {
   display: flex;
-
   flex-direction: column;
 
   gap: 1rem;
@@ -1037,8 +1036,7 @@ a {
 
   gap: 0.85rem;
 
-  padding:
-    0.9rem 1.1rem;
+  padding: 0.9rem 1.1rem;
 
   background: var(--bg-soft);
 
@@ -1048,6 +1046,25 @@ a {
 
   font-weight: 600;
   font-size: 0.95rem;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-highlights li:hover {
+  border-color: var(--nav-outline);
+
+  transform: translateX(4px);
+}
+
+.about-highlights svg {
+  flex-shrink: 0;
+
+  width: 20px;
+  height: 20px;
+
+  color: var(--accent);
 }
 
 
