@@ -43,10 +43,6 @@ const translations = {
     service_4_desc:
       "Güvenli depolama ve envanter yönetimi için lisanslı antrepo çözümleri.",
 
-    service_5_title: "Dış Ticaret Danışmanlığı",
-    service_5_desc:
-      "Pazar araştırmasından teşvik mevzuatına, dış ticaret stratejinizi birlikte kurgularız.",
-
     service_6_title: "Lojistik Danışmanlık",
     service_6_desc:
       "Taşımacılık planlamasından rota optimizasyonuna kadar lojistik süreç danışmanlığı.",
@@ -56,12 +52,11 @@ const translations = {
     about_title: "Yılların Verdiği Deneyimle Yanınızdayız",
 
     about_text:
-      "Sigma Gümrük Müşavirliği olarak, yılların deneyimini modern gümrük çözümleriyle birleştiriyoruz. Uzman kadromuz, ithalat ve ihracat süreçlerinizin her aşamasında mevzuata tam uyumlu, hızlı ve şeffaf hizmet sunar. Amacımız, dış ticaretinizi büyütürken gümrük işlemlerinin karmaşıklığını sizin için ortadan kaldırmaktır.",
+      "2005 yılında gümrük sektöründe başlayan yolculuğumuz, yıllar içerisinde edindiğimiz bilgi, deneyim ve güçlü iş ortaklıklarıyla devam etmektedir. Gümrük müşavirliği ve dış ticaret süreçlerinde müşterilerimize hızlı, güvenilir ve çözüm odaklı hizmet sunmayı hedefliyoruz.",
 
-    
-    about_highlight_1: "Mevzuata Tam Uyum",
-    about_highlight_2: "7/24 Operasyonel Destek",
-    about_highlight_3: "Global Lojistik Ağı",
+    about_highlight_2: "Mevzuata Tam Uyum",
+    about_highlight_3: "7/24 Operasyonel Destek",
+    about_highlight_4: "Global Lojistik Ağı",
 
     contact_eyebrow: "İLETİŞİM",
 
@@ -72,16 +67,13 @@ const translations = {
 
     contact_address_label: "Adres",
     contact_address_value:
-      "Merkez Mahallesi, Gümrük Caddesi No:1, İstanbul, Türkiye",
+      "Alsancak Mahallesi 1472 Sokak Osmanbey Apartmanı No:44 K:2 D:4 Konak, İzmir",
 
     contact_phone_label: "Telefon",
-    contact_phone_value: "+90 (212) 000 00 00",
+    contact_phone_value: "Emrah GÜLTEKİN: +90 (535) 215 68 40, Muhammet YANAR: +90 (538) 095 80 31, Eren ALKAN: +90 (532) 402 29 36",
 
     contact_email_label: "E-posta",
     contact_email_value: "info@sigmagumruk.com",
-
-    contact_hours_label: "Çalışma Saatleri",
-    contact_hours_value: "Pazartesi - Cuma, 09:00 - 18:00",
 
     contact_form_name: "Ad Soyad",
     contact_form_email: "E-posta",
@@ -138,10 +130,6 @@ const translations = {
     service_4_desc:
       "Licensed bonded warehouse solutions for secure storage and inventory management.",
 
-    service_5_title: "Foreign Trade Consulting",
-    service_5_desc:
-      "From market research to incentive regulations, we help shape your foreign trade strategy.",
-
     service_6_title: "Logistics Consulting",
     service_6_desc:
       "Logistics process consulting, from transportation planning to route optimization.",
@@ -151,11 +139,11 @@ const translations = {
     about_title: "By Your Side With Years of Experience",
 
     about_text:
-      "At Sigma Gümrük, we combine years of experience with modern customs solutions. Our expert team delivers fast, transparent, and fully compliant service at every stage of your import and export processes. Our goal is to remove the complexity of customs procedures so you can focus on growing your trade.",
+      "Our journey began in the customs sector in 2005 and has continued over the years with the knowledge, experience, and strong partnerships we have gained. We aim to provide our clients with fast, reliable, and solution-oriented services in customs consultancy and foreign trade processes.",
 
-    about_highlight_1: "Full Regulatory Compliance",
-    about_highlight_2: "24/7 Operational Support",
-    about_highlight_3: "Global Logistics Network",
+    about_highlight_2: "Full Regulatory Compliance",
+    about_highlight_3: "24/7 Operational Support",
+    about_highlight_4: "Global Logistics Network",
 
     contact_eyebrow: "CONTACT",
 
@@ -166,16 +154,13 @@ const translations = {
 
     contact_address_label: "Address",
     contact_address_value:
-      "Merkez Mahallesi, Gümrük Caddesi No:1, Istanbul, Turkey",
+      "Alsancak Mahallesi 1472 Sokak Osmanbey Apartmanı No:44 K:2 D:4 Konak, İzmir",
 
     contact_phone_label: "Phone",
-    contact_phone_value: "+90 (212) 000 00 00",
+    contact_phone_value: "Emrah GÜLTEKİN: +90 (535) 215 68 40, Muhammet YANAR: +90 (538) 095 80 31, Eren ALKAN: +90 (532) 402 29 36",
 
     contact_email_label: "Email",
     contact_email_value: "info@sigmagumruk.com",
-
-    contact_hours_label: "Working Hours",
-    contact_hours_value: "Monday - Friday, 9:00 AM - 6:00 PM",
 
     contact_form_name: "Full Name",
     contact_form_email: "Email",
