@@ -75,14 +75,6 @@ const translations = {
     contact_email_label: "E-posta",
     contact_email_value: "info@sigmagumruk.com",
 
-    contact_form_name: "Ad Soyad",
-    contact_form_email: "E-posta",
-    contact_form_message: "Mesajınız",
-    contact_form_submit: "Gönder",
-
-    contact_form_success:
-      "Mesajınız için teşekkürler! En kısa sürede size dönüş yapacağız.",
-
     footer_text:
       "© 2026 Sigma Gümrük. Tüm hakları saklıdır.",
 
@@ -162,14 +154,6 @@ const translations = {
     contact_email_label: "Email",
     contact_email_value: "info@sigmagumruk.com",
 
-    contact_form_name: "Full Name",
-    contact_form_email: "Email",
-    contact_form_message: "Message",
-    contact_form_submit: "Send",
-
-    contact_form_success:
-      "Thank you for your message! We'll get back to you shortly.",
-
     footer_text:
       "© 2026 Sigma Gümrük. All rights reserved.",
 
@@ -217,11 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const navDropdown =
     document.getElementById("navDropdown");
 
-  const contactForm =
-    document.getElementById("contactForm");
-
-  const contactFormNote =
-    document.getElementById("contactFormNote");
 
 
   // =======================================================
@@ -511,32 +490,4 @@ document.addEventListener("DOMContentLoaded", () => {
       "menu-open"
     );
   }
-
-
-  // =======================================================
-  // CONTACT FORM
-  //
-  // NOTE: This only validates and shows a confirmation
-  // client-side — it does not actually send an email yet.
-  // Wire this up to a backend or a service like Formspree
-  // / EmailJS so submissions are actually delivered.
-  // =======================================================
-
-  if (contactForm) {
-
-    contactForm.addEventListener(
-      "submit",
-      (event) => {
-
-        event.preventDefault();
-
-        contactFormNote.classList.remove(
-          "hidden"
-        );
-
-        contactForm.reset();
-      }
-    );
-  }
-
 });
