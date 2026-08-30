@@ -1,4 +1,16 @@
 // =========================================================
+// SUPABASE CLIENT
+// (used only for the public "send us a message" form here —
+// the portal's own auth/forum/inbox logic lives in portal.js)
+// =========================================================
+
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./supabase-config.js";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
+// =========================================================
 // TRANSLATIONS
 // =========================================================
 
@@ -8,6 +20,8 @@ const translations = {
     nav_services: "Hizmetler",
     nav_about: "Hakkımızda",
     nav_contact: "İletişim",
+
+    nav_signin: "Giriş Yap",
 
     hero_eyebrow: "SIGMA GÜMRÜK",
 
@@ -85,6 +99,25 @@ const translations = {
     contact_email_value:
       "info@sigmagumruk.com",
 
+    contact_message_btn: "Bize Mesaj Gönderin",
+
+    message_modal_title: "Bize Mesaj Gönderin",
+
+    message_form_first_name: "Ad",
+    message_form_last_name: "Soyad",
+    message_form_company: "Şirket (opsiyonel)",
+    message_form_email: "E-posta",
+    message_form_message: "Mesajınız",
+    message_form_submit: "Gönder",
+
+    message_form_sending: "Gönderiliyor...",
+
+    message_form_success:
+      "Mesajınız için teşekkürler! En kısa sürede size dönüş yapacağız.",
+
+    message_form_error:
+      "Bir şeyler ters gitti. Lütfen tekrar deneyin ya da doğrudan e-posta gönderin.",
+
     footer_text:
       "© 2026 Sigma Gümrük. Tüm hakları saklıdır.",
 
@@ -97,6 +130,8 @@ const translations = {
     nav_services: "Services",
     nav_about: "About",
     nav_contact: "Contact",
+
+    nav_signin: "Sign In",
 
     hero_eyebrow: "SIGMA CUSTOMS",
 
@@ -183,6 +218,25 @@ const translations = {
     contact_email_value:
       "info@sigmagumruk.com",
 
+    contact_message_btn: "Send Us a Message",
+
+    message_modal_title: "Send Us a Message",
+
+    message_form_first_name: "First Name",
+    message_form_last_name: "Last Name",
+    message_form_company: "Company (optional)",
+    message_form_email: "Email",
+    message_form_message: "Message",
+    message_form_submit: "Send",
+
+    message_form_sending: "Sending...",
+
+    message_form_success:
+      "Thank you for your message! We'll get back to you shortly.",
+
+    message_form_error:
+      "Something went wrong. Please try again or email us directly.",
+
     footer_text:
       "© 2026 Sigma Gümrük. All rights reserved.",
 
@@ -230,6 +284,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navDropdown =
     document.getElementById("navDropdown");
+
+  const openMessageModal =
+    document.getElementById("openMessageModal");
+
+  const closeMessageModal =
+    document.getElementById("closeMessageModal");
+
+  const messageModal =
+    document.getElementById("messageModal");
+
+  const messageModalBackdrop =
+    document.getElementById("messageModalBackdrop");
+
+  const messageForm =
+    document.getElementById("messageForm");
+
+  const messageFormNote =
+    document.getElementById("messageFormNote");
 
 
   // =======================================================
@@ -602,6 +674,119 @@ document.addEventListener("DOMContentLoaded", () => {
       "menu-open"
     );
 
+  }
+
+
+  // =======================================================
+  // MESSAGE MODAL (public "send us a message" form)
+  // =======================================================
+
+  if (openMessageModal) {
+
+    openMessageModal.addEventListener("click", () => {
+      messageModal.classList.remove("hidden");
+    });
+
+    closeMessageModal.addEventListener("click", () => {
+      messageModal.classList.add("hidden");
+    });
+
+    messageModalBackdrop.addEventListener("click", () => {
+      messageModal.classList.add("hidden");
+    });
+
+    document.addEventListener("keydown", (event) => {
+
+      if (
+        event.key === "Escape" &&
+        !messageModal.classList.contains("hidden")
+      ) {
+        messageModal.classList.add("hidden");
+      }
+
+    });
+
+    messageForm.addEventListener(
+      "submit",
+      async (event) => {
+
+        event.preventDefault();
+
+        const dict =
+          translations[document.documentElement.lang];
+
+        // Validate required fields
+        const firstName = messageForm.first_name.value.trim();
+        const lastName = messageForm.last_name.value.trim();
+        const email = messageForm.email.value.trim();
+        const messageValue = messageForm.message.value.trim();
+
+        if (!firstName || !lastName || !email || !messageValue) {
+          messageFormNote.classList.remove("hidden");
+          messageFormNote.textContent =
+            dict.message_form_error || "Please fill in all required fields";
+          messageFormNote.classList.add("error");
+          return;
+        }
+
+        const submitButton =
+          messageForm.querySelector(
+            "button[type=submit]"
+          );
+
+        const originalLabel =
+          submitButton.textContent;
+
+        submitButton.disabled = true;
+        submitButton.textContent =
+          dict.message_form_sending;
+
+        messageFormNote.classList.add("hidden");
+
+        const { error } = await supabase
+          .from("messages")
+          .insert({
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            company:
+              messageForm.company.value.trim() || null,
+            message: messageValue
+          });
+
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+
+        messageFormNote.classList.remove("hidden");
+
+        if (error) {
+
+          console.error(
+            "Message submission failed:",
+            error
+          );
+
+          messageFormNote.textContent =
+            dict.message_form_error;
+
+          messageFormNote.classList.add("error");
+
+        } else {
+
+          messageFormNote.textContent =
+            dict.message_form_success;
+
+          messageFormNote.classList.remove("error");
+
+          messageForm.reset();
+
+          setTimeout(() => {
+            messageModal.classList.add("hidden");
+          }, 1800);
+        }
+
+      }
+    );
   }
 
 });
