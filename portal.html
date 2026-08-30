@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portal | Sigma Gümrük</title>
+
+  <!--
+    IMPORTANT — this page checks who you are via Supabase Auth
+    (see supabase-config.js and supabase-schema.sql), which is
+    real, database-enforced access control — not just a page
+    that's hard to find.
+
+    For an extra layer, you can ALSO gate this URL at the
+    network edge with Cloudflare Access once your domain
+    transfer is complete (see earlier setup notes). That's
+    optional defense-in-depth, not required for this to work.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .portal-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .portal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .portal-header img {
+      height: 40px;
+      width: auto;
+    }
+
+    .portal-back {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .portal-back:hover {
+      color: var(--text);
+    }
+
+    .portal-login-card {
+      max-width: 400px;
+      margin: 4rem auto 0;
+      padding: 2.5rem;
+      background: var(--bg-soft);
+      border: 1px solid #21262d;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .portal-login-card h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem;
+    }
+
+    .portal-login-card p.portal-hint {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .portal-login-card form {
+      text-align: left;
+    }
+
+    .portal-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #21262d;
+    }
+
+    .portal-signout {
+      padding: 0.45rem 1rem;
+      background: transparent;
+      border: 1px solid #30363d;
+      border-radius: 999px;
+      color: var(--text-dim);
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .portal-signout:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .portal-block {
+      margin-bottom: 3rem;
+    }
+
+    .portal-block h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin: 0 0 1.25rem;
+    }
+
+    .portal-forum-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .portal-forum-form textarea {
+      padding: 0.8rem 1rem;
+      background: var(--bg);
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+
+    .portal-forum-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .portal-forum-form button {
+      align-self: flex-start;
+    }
+
+    .portal-post,
+    .portal-message {
+      padding: 1rem 1.2rem;
+      background: var(--bg-soft);
+      border: 1px solid #21262d;
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+    }
+
+    .portal-post-meta,
+    .portal-message-meta {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin: 0 0 0.4rem;
+    }
+
+    .portal-post-content,
+    .portal-message-content {
+      margin: 0;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .portal-empty {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="portal-wrap">
+
+    <div class="portal-header">
+      <img src="logo.png" alt="Sigma Gümrük Müşavirliği">
+      <a href="index.html" class="portal-back">← Anasayfa</a>
+    </div>
+
+
+    <!-- =================================================
+         LOGIN
+    ================================================== -->
+
+    <div id="loginView" class="portal-login-card">
+
+      <h1>Portal Girişi</h1>
+
+      <p class="portal-hint">
+        Hesabınız yoksa yöneticinizle iletişime geçin —
+        kayıt sayfası bulunmamaktadır.
+      </p>
+
+      <form id="loginForm" novalidate>
+
+        <div class="contact-field">
+          <label for="loginEmail">E-posta</label>
+          <input type="email" id="loginEmail" required>
+        </div>
+
+        <div class="contact-field">
+          <label for="loginPassword">Şifre</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+
+        <button type="submit" class="cta">Giriş Yap</button>
+
+        <p class="contact-form-note hidden" id="loginNote"></p>
+
+      </form>
+
+    </div>
+
+
+    <!-- =================================================
+         APP (hidden until signed in)
+    ================================================== -->
+
+    <div id="appView" class="hidden">
+
+      <div class="portal-topbar">
+        <p id="welcomeText"></p>
+        <button id="signOutBtn" class="portal-signout">Çıkış Yap</button>
+      </div>
+
+      <section class="portal-block">
+        <h2>Forum</h2>
+
+        <form id="forumForm" class="portal-forum-form" novalidate>
+          <textarea id="forumContent" rows="3" placeholder="Bir şeyler paylaşın..." required></textarea>
+          <button type="submit" class="cta">Paylaş</button>
+        </form>
+
+        <div id="forumList"></div>
+      </section>
+
+      <section id="messagesBlock" class="portal-block hidden">
+        <h2>Müşteri Mesajları</h2>
+        <div id="messagesList"></div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="portal.js"></script>
+
+</body>
+</html>
